@@ -214,3 +214,26 @@ SELECT COUNT(*) FROM salaries WHERE salary >= 100000;
 
 SELECT COUNT(*) FROM dept_manager;
 
+# ORDER BY
+
+SELECT 
+    *
+FROM
+    employees
+ORDER BY first_name, last_name asc;
+
+# Select all data from the “employees” table, ordering it by “hire date” in descending order.
+
+SELECT * FROM employees ORDER BY hire_date desc;
+
+# GROUP BY
+
+SELECT
+	first_name, count(first_name)
+FROM
+    employees
+GROUP BY first_name
+order by first_name desc;
+
+
+
