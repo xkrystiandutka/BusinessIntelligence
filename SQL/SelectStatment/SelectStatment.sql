@@ -229,11 +229,47 @@ SELECT * FROM employees ORDER BY hire_date desc;
 # GROUP BY
 
 SELECT
-	first_name, count(first_name)
+	first_name, count(first_name) as names_count
 FROM
     employees
 GROUP BY first_name
 order by first_name desc;
 
+# This will be a slightly more sophisticated task.
+
+# Write a query that obtains an output whose first column must contain annual salaries higher than 80,000 dollars. The second column, renamed to “emps_with_same_salary”, must show the number of employee contracts signed with this salary.
+
+SELECT salary, COUNT(emp_no) AS emps_with_same_salary FROM salaries WHERE salary > 80000 GROUP BY salary ORDER BY salary;
+
+# HAVING
+
+SELECT 
+    *
+FROM
+    employees
+HAVING hire_date >= '2000-01-01';
 
 
+SELECT 
+    first_name, COUNT(first_name) AS names_count
+FROM
+    employees
+GROUP BY first_name
+HAVING COUNT(first_name) > 250
+ORDER BY first_name;
+
+# Select all employees whose average salary is higher than $120,000 per annum.
+# Hint: You should obtain 101 records.
+# Compare the output you obtained with the output of the following two queries:
+
+SELECT *, AVG(salary) FROM salaries WHERE salary > 120000 GROUP BY emp_no ORDER BY emp_no;
+
+SELECT *, AVG(salary) FROM salaries GROUP BY emp_no HAVING AVG(salary) > 120000;
+
+SELECT
+    emp_no, AVG(salary)
+FROM
+    salaries
+GROUP BY emp_no
+HAVING AVG(salary) > 120000
+ORDER BY emp_no;
