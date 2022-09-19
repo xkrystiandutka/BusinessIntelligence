@@ -31,9 +31,15 @@ SELECT SUM(salary) FROM salaries WHERE from_date > '1997-01-01';
 
 # MIN() & MAX()
 
-select max(salary) from salaries;
+SELECT 
+    MAX(salary)
+FROM
+    salaries;
 
-select min(salary) from salaries;
+SELECT 
+    MIN(salary)
+FROM
+    salaries;
 
 # Which is the lowest employee number in the database?
 
@@ -43,9 +49,17 @@ SELECT MIN(emp_no) FROM employees;
 
 SELECT MAX(emp_no) FROM employees;
 
+# AVG()
 
+SELECT 
+    ROUND(AVG(salary), 2)
+FROM
+    salaries;
 
+# What is the average annual salary paid to employees who started after the 1st of January 1997?
 
+select avg(salary) from salaries where from_date > '1997-01-01';
 
+# Round the average amount of money spent on salaries for all contracts that started after the 1st of January 1997 to a precision of cents.
 
-
+SELECT ROUND(AVG(salary), 2) FROM salaries WHERE from_date > '1997-01-01';
