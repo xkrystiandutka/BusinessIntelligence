@@ -73,6 +73,51 @@ FROM
     departments_dup
 ORDER BY dept_no ASC;
 
+# LEFT JOIN
 
+# remove the duplicates from two tables
 
+delete from dept_manager_dup
+where emp_no='110228';
+delete from departments_dup
+where dept_no='d009';
 
+#add back the inital records
+INSERT INTO dept_manager_dup
+VALUES('110228', 'd003', '1992-03-21', '9999-01-01');
+
+INSERT INTO departments_dup
+VALUES('d009', 'Customer Service');
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        left JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+SELECT 
+    d.dept_no, m.emp_no, d.dept_name
+FROM
+    departments_dup d 
+        left JOIN
+    dept_manager_dup m ON m.dept_no = d.dept_no
+ORDER BY d.dept_no;
+
+SELECT 
+    d.dept_no, m.emp_no, d.dept_name
+FROM
+    departments_dup d 
+        left outer JOIN
+    dept_manager_dup m ON m.dept_no = d.dept_no
+ORDER BY d.dept_no;
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        left JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+    where dept_name is null
+ORDER BY m.dept_no;
