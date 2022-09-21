@@ -139,3 +139,23 @@ FROM
 WHERE
     e.last_name = 'Markovitch'
 ORDER BY dm.dept_no DESC, e.emp_no;
+
+# RIGHT JOIN
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        right JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    departments_dup d    
+        right JOIN
+	dept_manager_dup m ON m.dept_no = d.dept_no
+ORDER BY dept_no;
+
