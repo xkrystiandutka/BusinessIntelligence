@@ -271,3 +271,106 @@ FROM
 WHERE
 	d.dept_no <> dm.dept_no
 ORDER BY dm.emp_no , d.dept_no;
+
+# Use a CROSS JOIN to return a list with all possible combinations between managers from the dept_manager table and department number 9.
+
+SELECT
+    dm.*, d.*
+FROM
+    departments d
+        CROSS JOIN
+    dept_manager dm
+WHERE
+    d.dept_no = 'd009'
+ORDER BY d.dept_name;
+
+# Return a list with the first 10 employees with all the departments they can be assigned to.
+
+# Hint: Don’t use LIMIT; use a WHERE clause.
+
+SELECT
+    e.*, d.*
+FROM
+    employees e
+        CROSS JOIN
+    departments d
+WHERE
+    e.emp_no < 10011
+ORDER BY e.emp_no, d.dept_name;
+
+
+# Combining Aggregate Functions with Joins
+
+SELECT 
+    e.gender, AVG(s.salary) AS avarage_salary
+FROM
+    employees e
+        JOIN
+    salaries s ON e.emp_no = s.emp_no
+GROUP BY gender; 
+
+# JOIN More than Two Tables
+
+SELECT 
+    e.first_name,
+    e.last_name,
+    e.hire_date,
+    m.from_date,
+    d.dept_name
+FROM
+    employees e
+        JOIN
+    dept_manager m ON e.emp_no = m.emp_no
+        JOIN
+    departments d ON m.dept_no = d.dept_no;
+    
+ SELECT 
+    e.first_name,
+    e.last_name,
+    e.hire_date,
+    m.from_date,
+    d.dept_name
+FROM
+    employees e
+         JOIN
+    dept_manager m ON e.emp_no = m.emp_no
+        RIGHT JOIN
+    departments d ON m.dept_no = d.dept_no;
+       
+# Select all managers’ first and last name, hire date, job title, start date, and department name.
+
+SELECT
+    e.first_name,
+    e.last_name,
+    e.hire_date,
+    t.title,
+    m.from_date,
+    d.dept_name
+FROM
+    employees e
+        JOIN
+    dept_manager m ON e.emp_no = m.emp_no
+        JOIN
+    departments d ON m.dept_no = d.dept_no
+        JOIN
+    titles t ON e.emp_no = t.emp_no
+WHERE t.title = 'Manager'
+ORDER BY e.emp_no;
+
+SELECT
+    e.first_name,
+    e.last_name,
+    e.hire_date,
+    t.title,
+    m.from_date,
+    d.dept_name
+FROM
+    employees e
+        JOIN
+    dept_manager m ON e.emp_no = m.emp_no
+        JOIN
+    departments d ON m.dept_no = d.dept_no
+        JOIN
+    titles t ON e.emp_no = t.emp_no
+            AND m.from_date = t.from_date
+ORDER BY e.emp_no;
