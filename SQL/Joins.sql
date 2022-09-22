@@ -204,3 +204,23 @@ FROM
     employees e
         JOIN
     dept_manager dm ON e.emp_no = dm.emp_no; 
+    
+    
+#  JOIN and WHERE Together
+
+select e.emp_no, e.first_name, e.last_name, s.salary from employees e join salaries s on e.emp_no = s.emp_no where s.salary > 145000;
+# https://stackoverflow.com/questions/23921117/disable-only-full-group-by
+#set @@global.sql_mode := replace(@@global.sql_mode, 'ONLY_FULL_GROUP_BY', '');
+
+#Select the first and last name, the hire date, and the job title of all employees whose first name is “Margareta” and have the last name “Markovitch”.
+
+SELECT
+    e.first_name, e.last_name, e.hire_date, t.title
+FROM
+    employees e
+        JOIN
+    titles t ON e.emp_no = t.emp_no
+WHERE
+    first_name = 'Margareta'
+        AND last_name = 'Markovitch'
+ORDER BY e.emp_no;   
