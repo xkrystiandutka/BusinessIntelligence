@@ -398,3 +398,89 @@ FROM
         JOIN
     dept_manager dm ON e.emp_no = dm.emp_no
 GROUP BY gender;
+
+# The Differences Between UNION and UNION ALL
+
+drop table if exists employees_dup;
+create table employees_dup (
+	emp_no int(10),
+    birth_date date,
+    first_name varchar(14),
+    last_name varchar(16),
+    gender enum('M', 'F'),
+    hire_date date);
+    
+-- duplicate the structure of the employees table
+
+insert into employees_dup
+select e.* from employees e limit 20;
+
+select * from employees_dup;
+
+insert INTO employees_dup values('10001', '1953-09-02', 'Georgi', 'Facello', 'M', '1986-06-26');
+
+select * from employees_dup;
+
+# Union vs Unnion All
+
+SELECT 
+    e.emp_no,
+    e.first_name,
+    e.last_name,
+    NULL AS dept_no,
+    NULL AS from_date
+FROM
+    employees_dup e
+WHERE
+    e.emp_no = '10001' 
+UNION ALL SELECT 
+    NULL AS emp_no,
+    NULL AS first_name,
+    NULL AS last_name,
+    m.dept_no,
+    m.from_date
+FROM
+    dept_manager m;
+
+SELECT 
+    e.emp_no,
+    e.first_name,
+    e.last_name,
+    NULL AS dept_no,
+    NULL AS from_date
+FROM
+    employees_dup e
+WHERE
+    e.emp_no = '10001' 
+UNION  SELECT 
+    NULL AS emp_no,
+    NULL AS first_name,
+    NULL AS last_name,
+    m.dept_no,
+    m.from_date
+FROM
+    dept_manager m;
+
+# Go forward to the solution and execute the query. What do you think is the meaning of the minus sign before subset A in the last row (ORDER BY -a.emp_no DESC)?
+
+SELECT
+    *
+FROM
+    (SELECT
+        e.emp_no,
+            e.first_name,
+            e.last_name,
+            NULL AS dept_no,
+            NULL AS from_date
+    FROM
+        employees e
+    WHERE
+        last_name = 'Denis' UNION SELECT
+		NULL AS emp_no,
+        NULL AS first_name,
+        NULL AS last_name,
+        dm.dept_no,
+        dm.from_date
+    FROM
+        dept_manager dm) as a
+ORDER BY -a.emp_no DESC;
