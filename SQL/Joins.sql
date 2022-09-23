@@ -374,3 +374,27 @@ FROM
     titles t ON e.emp_no = t.emp_no
             AND m.from_date = t.from_date
 ORDER BY e.emp_no;
+
+# Tricks for Joins
+
+SELECT 
+    d.dept_name, AVG(salary) as avarage_salary
+FROM
+    departments d
+        JOIN
+    dept_manager m ON d.dept_no = m.dept_no
+        JOIN
+    salaries s ON m.emp_no = s.emp_no
+group by d.dept_name
+having avarage_salary >  60000
+order by avarage_salary DESC;
+
+# How many male and how many female managers do we have in the ‘employees’ database?
+
+SELECT
+    e.gender, COUNT(dm.emp_no)
+FROM
+    employees e
+        JOIN
+    dept_manager dm ON e.emp_no = dm.emp_no
+GROUP BY gender;
