@@ -72,3 +72,10 @@ What would you say is the “employees” to “dept_manager” relationship?
 
 -||--------|<
 - One-to-many
+
+
+Defining Stored Routines
+
+Select the correct answer.
+
+a stored routine is nothing but an SQL statement, or a set of SQL statements, that can be stored on the database server
