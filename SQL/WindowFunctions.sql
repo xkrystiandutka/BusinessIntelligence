@@ -35,3 +35,17 @@ last_name,
 ROW_NUMBER() OVER (PARTITION BY first_name ORDER BY last_name) AS row_num
 FROM
 employees;
+
+# A Note on Using Several Window Functions in a Query
+
+use employees;
+
+select 
+emp_nu,
+salary,
+row_number() over() as row_num1,
+row_number() over(PARTITION BY emp_nu) as row_num2,
+row_number() over(PARTITION BY emp_nu ORDER BY salary desc) as row_num3,
+row_number() over(order by salary desc) as row_num3 
+from salaries
+order by emp_no, salary
