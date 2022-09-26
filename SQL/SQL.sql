@@ -79,3 +79,7 @@ Defining Stored Routines
 Select the correct answer.
 
 a stored routine is nothing but an SQL statement, or a set of SQL statements, that can be stored on the database server
+
+Mark the wrong answer.
+
+including a function in a SELECT statement is impossible.
