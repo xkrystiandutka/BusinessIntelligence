@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20222.22.0916.1526                               -->
+<workbook original-version='18.1' source-build='2022.2.2 (20222.22.0916.1526)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Audiobook reviews (Audiobook+reviews)' inline='true' name='federated.0shykcx1xewqaj133yqkm1ihddgs' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Audiobook+reviews' name='excel-direct.18jslp21ozjey41aa8zjn0k9jeqi'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/GrfId/OneDrive/Pulpit/myProjects/BI/Tableau/Excercise/Audiobook+reviews.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.18jslp21ozjey41aa8zjn0k9jeqi' name='Audiobook reviews' table='[&apos;Audiobook reviews$&apos;]' type='table'>
+          <columns gridOrigin='A1:D10799:no:A1:D10799:0' header='yes' outcome='6'>
+            <column datatype='string' name='Audiobook name' ordinal='0' />
+            <column datatype='date' name='Review Date' ordinal='1' />
+            <column datatype='integer' name='Rating' ordinal='2' />
+            <column datatype='integer' name='Transaction ID' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.18jslp21ozjey41aa8zjn0k9jeqi' name='Audiobook reviews' table='[&apos;Audiobook reviews$&apos;]' type='table'>
+          <columns gridOrigin='A1:D10799:no:A1:D10799:0' header='yes' outcome='6'>
+            <column datatype='string' name='Audiobook name' ordinal='0' />
+            <column datatype='date' name='Review Date' ordinal='1' />
+            <column datatype='integer' name='Rating' ordinal='2' />
+            <column datatype='integer' name='Transaction ID' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Audiobook reviews]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D10799:no:A1:D10799:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audiobook name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Audiobook name]</local-name>
+            <parent-name>[Audiobook reviews]</parent-name>
+            <remote-alias>Audiobook name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Review Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Review Date]</local-name>
+            <parent-name>[Audiobook reviews]</parent-name>
+            <remote-alias>Review Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rating]</local-name>
+            <parent-name>[Audiobook reviews]</parent-name>
+            <remote-alias>Rating</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Transaction ID]</local-name>
+            <parent-name>[Audiobook reviews]</parent-name>
+            <remote-alias>Transaction ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Transaction ID]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Audiobook reviews' datatype='table' name='[__tableau_internal_object_id__].[Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Poland&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Audiobook reviews' id='Audiobook reviews_CFBEBD002ACA43D68A5DD1265072CD9D'>
+            <properties context=''>
+              <relation connection='excel-direct.18jslp21ozjey41aa8zjn0k9jeqi' name='Audiobook reviews' table='[&apos;Audiobook reviews$&apos;]' type='table'>
+                <columns gridOrigin='A1:D10799:no:A1:D10799:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Audiobook name' ordinal='0' />
+                  <column datatype='date' name='Review Date' ordinal='1' />
+                  <column datatype='integer' name='Rating' ordinal='2' />
+                  <column datatype='integer' name='Transaction ID' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='Audiobook sales (Audiobook+sales)' inline='true' name='federated.01gp6rz188wdrg0zrv4681973loj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Audiobook+sales' name='excel-direct.0zquk8f0d88att1136oz50wll3zq'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/GrfId/OneDrive/Pulpit/myProjects/BI/Tableau/Excercise/Audiobook+sales.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0zquk8f0d88att1136oz50wll3zq' name='Audiobook sales' table='[&apos;Audiobook sales$&apos;]' type='table'>
+          <columns gridOrigin='A1:C10001:no:A1:C2147483647:0' header='yes' outcome='6'>
+            <column datatype='date' name='Date of Purchase' ordinal='0' />
+            <column datatype='string' name='Audiobook name' ordinal='1' />
+            <column datatype='integer' name='Transaction ID' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.0zquk8f0d88att1136oz50wll3zq' name='Audiobook sales' table='[&apos;Audiobook sales$&apos;]' type='table'>
+          <columns gridOrigin='A1:C10001:no:A1:C2147483647:0' header='yes' outcome='6'>
+            <column datatype='date' name='Date of Purchase' ordinal='0' />
+            <column datatype='string' name='Audiobook name' ordinal='1' />
+            <column datatype='integer' name='Transaction ID' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Audiobook sales]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C10001:no:A1:C2147483647:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date of Purchase</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date of Purchase]</local-name>
+            <parent-name>[Audiobook sales]</parent-name>
+            <remote-alias>Date of Purchase</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook sales_BD6F1DA4150A4652A407637B10CB6266]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Audiobook name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Audiobook name]</local-name>
+            <parent-name>[Audiobook sales]</parent-name>
+            <remote-alias>Audiobook name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook sales_BD6F1DA4150A4652A407637B10CB6266]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Transaction ID]</local-name>
+            <parent-name>[Audiobook sales]</parent-name>
+            <remote-alias>Transaction ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Audiobook sales_BD6F1DA4150A4652A407637B10CB6266]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Transaction ID]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Audiobook sales' datatype='table' name='[__tableau_internal_object_id__].[Audiobook sales_BD6F1DA4150A4652A407637B10CB6266]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Poland&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Audiobook sales' id='Audiobook sales_BD6F1DA4150A4652A407637B10CB6266'>
+            <properties context=''>
+              <relation connection='excel-direct.0zquk8f0d88att1136oz50wll3zq' name='Audiobook sales' table='[&apos;Audiobook sales$&apos;]' type='table'>
+                <columns gridOrigin='A1:C10001:no:A1:C2147483647:0' header='yes' outcome='6'>
+                  <column datatype='date' name='Date of Purchase' ordinal='0' />
+                  <column datatype='string' name='Audiobook name' ordinal='1' />
+                  <column datatype='integer' name='Transaction ID' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <datasource-relationships>
+    <datasource-dependencies datasource='federated.01gp6rz188wdrg0zrv4681973loj'>
+      <column datatype='date' name='[Date of Purchase]' role='dimension' type='ordinal' />
+      <column-instance column='[Date of Purchase]' derivation='Month' name='[mn:Date of Purchase:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Date of Purchase]' derivation='Month-Trunc' name='[tmn:Date of Purchase:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Date of Purchase]' derivation='Year-Trunc' name='[tyr:Date of Purchase:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Date of Purchase]' derivation='Year' name='[yr:Date of Purchase:ok]' pivot='key' type='ordinal' />
+    </datasource-dependencies>
+    <datasource-dependencies datasource='federated.0shykcx1xewqaj133yqkm1ihddgs'>
+      <column datatype='date' name='[Review Date]' role='dimension' type='ordinal' />
+      <column-instance column='[Review Date]' derivation='Month' name='[mn:Review Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Review Date]' derivation='Month-Trunc' name='[tmn:Review Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Review Date]' derivation='Year-Trunc' name='[tyr:Review Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Review Date]' derivation='Year' name='[yr:Review Date:ok]' pivot='key' type='ordinal' />
+    </datasource-dependencies>
+    <datasource-relationship source='federated.01gp6rz188wdrg0zrv4681973loj' target='federated.0shykcx1xewqaj133yqkm1ihddgs'>
+      <column-mapping>
+        <map key='[federated.01gp6rz188wdrg0zrv4681973loj].[mn:Date of Purchase:ok]' value='[federated.0shykcx1xewqaj133yqkm1ihddgs].[mn:Review Date:ok]' />
+        <map key='[federated.01gp6rz188wdrg0zrv4681973loj].[tmn:Date of Purchase:ok]' value='[federated.0shykcx1xewqaj133yqkm1ihddgs].[tmn:Review Date:ok]' />
+        <map key='[federated.01gp6rz188wdrg0zrv4681973loj].[tyr:Date of Purchase:ok]' value='[federated.0shykcx1xewqaj133yqkm1ihddgs].[tyr:Review Date:ok]' />
+        <map key='[federated.01gp6rz188wdrg0zrv4681973loj].[yr:Date of Purchase:ok]' value='[federated.0shykcx1xewqaj133yqkm1ihddgs].[yr:Review Date:ok]' />
+      </column-mapping>
+    </datasource-relationship>
+  </datasource-relationships>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Audiobook reviews (Audiobook+reviews)' name='federated.0shykcx1xewqaj133yqkm1ihddgs' />
+            <datasource caption='Audiobook sales (Audiobook+sales)' name='federated.01gp6rz188wdrg0zrv4681973loj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01gp6rz188wdrg0zrv4681973loj'>
+            <column datatype='date' name='[Date of Purchase]' role='dimension' type='ordinal' />
+            <column-instance column='[Date of Purchase]' derivation='Month' name='[mn:Date of Purchase:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0shykcx1xewqaj133yqkm1ihddgs'>
+            <column datatype='integer' name='[Rating]' role='measure' type='quantitative' />
+            <column-instance column='[Rating]' derivation='Count' name='[cnt:Rating:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0shykcx1xewqaj133yqkm1ihddgs].[cnt:Rating:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.01gp6rz188wdrg0zrv4681973loj].[mn:Date of Purchase:ok]</cols>
+      </table>
+      <simple-id uuid='{E515D082-C237-43CD-B8BC-2AA03A43BF17}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='63'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.01gp6rz188wdrg0zrv4681973loj].[yr:Date of Purchase:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{47BC92BA-51A9-42C6-A300-28A51F82B6EC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='65' name='Sheet 1' width='192'>
+      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
+      RK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
